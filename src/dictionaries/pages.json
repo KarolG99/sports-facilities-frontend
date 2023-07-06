@@ -1,5 +1,13 @@
 {
   "home": {
-    "title": "Wszystkie obiekty"
+    "title": "Wszystkie obiekty",
+    "toggleButton": {
+      "option1": {
+        "name": "Lista"
+      },
+      "option2": {
+        "name": "Mapa"
+      }
+    }
   }
 }

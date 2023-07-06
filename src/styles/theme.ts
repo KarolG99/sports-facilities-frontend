@@ -12,6 +12,7 @@ export const theme = {
     heading3: "24px",
     heading4: "20px",
     heading5: "16px",
-    heading6: "14px"
+    heading6: "14px",
+    toggleOption: "18px"
   },
 };
