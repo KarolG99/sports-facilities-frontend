@@ -1,8 +1,9 @@
+import { styled } from "styled-components";
+
 import dictionary from "../../dictionaries/pages.json";
 
 import { ReactComponent as ListIcon } from "../../assets/icons/list.svg";
 import { ReactComponent as MapIcon } from "../../assets/icons/map.svg";
-import { styled } from "styled-components";
 
 const ToggleButton = () => {
   const toggleButtonDictionary = dictionary.home.toggleButton;
@@ -45,6 +46,10 @@ const StyledButton = styled.button`
   span {
     margin-left: 5px;
   }
+  svg {
+    width: 25px;
+    display: block;
+  }
 
   &:first-child {
     border-radius: 10px 0 0 10px;
@@ -58,11 +63,6 @@ const StyledButton = styled.button`
     svg {
       stroke-width: 2px;
     }
-  }
-
-  svg {
-    width: 25px;
-    display: block;
   }
 `;
 
