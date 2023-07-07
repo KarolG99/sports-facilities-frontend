@@ -39,7 +39,7 @@ const MapView = ({ facilities }: MapViewProps) => {
           iconUrl: facility.isOccupied
             ? OccupiedMarkerIcon
             : UnoccupiedMarkerIcon,
-          iconSize: [26, 48],
+          iconSize: [32, 38],
           iconAnchor: [12, 41],
           popupAnchor: [1, -34],
           tooltipAnchor: [16, -28],
@@ -52,6 +52,7 @@ const MapView = ({ facilities }: MapViewProps) => {
               Number(facility.coordinates.longitude),
             ]}
             icon={customIcon}
+            key={facility._id}
           >
             <Popup>
               <FacilityStatus
@@ -90,6 +91,13 @@ const StyledMapContainer = styled(MapContainer)`
   max-width: 800px;
   max-height: 670px;
   border-radius: 10px 10px 10px 10px;
+
+  @media (min-width: 992px) {
+    height: calc(90vh - 100px);
+    max-width: 500px;
+    max-height: 500px;
+    position: fixed;
+  }
 `;
 
 export default MapView;
