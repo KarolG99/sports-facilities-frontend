@@ -26,6 +26,10 @@ const StyledListView = styled.article`
   justify-content: center;
   align-items: center;
   gap: 25px;
+
+  @media (min-width: 992px) {
+    max-width: 500px;
+  }
 `;
 
 export default ListView;
