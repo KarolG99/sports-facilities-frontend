@@ -1,0 +1,9 @@
+{
+  "loading": {
+    "message": "Uruchamiam serwer i pobieram dane..."
+  },
+  "errorMessages": {
+    "default": "Coś poszło nie tak, spróbuj odświeżyć stronę.",
+    "fetching": "Coś poszło nie tak, spróbuj odświeżyć stronę."
+  }
+}

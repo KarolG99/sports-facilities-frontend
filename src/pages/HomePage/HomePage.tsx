@@ -7,6 +7,10 @@ import ToggleView from "../../components/atoms/ToggleView";
 import { getAllFacilities } from "../../serviceCalls/getAllFacilities";
 
 import { ViewsType } from "./types";
+import { ErrorMessagesType } from "../../components/atoms/ErrorMessage/types";
+
+import Loading from "../../components/molecules/Loading";
+import ErrorMessage from "../../components/atoms/ErrorMessage/ErrorMessage";
 
 import dictionary from "../../dictionaries/pages.json";
 
@@ -38,6 +42,11 @@ const HomePage = () => {
         setListView={() => setSelectedView(ViewsType.LIST_VIEW)}
         setMapView={() => setSelectedView(ViewsType.MAP_VIEW)}
       />
+
+      {isLoading && !isError && <Loading />}
+      {!isLoading && isError && (
+        <ErrorMessage errorType={ErrorMessagesType.FETCH_ERROR_MESSAGE} />
+      )}
     </StyledMain>
   );
 };

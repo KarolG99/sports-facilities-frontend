@@ -4,6 +4,8 @@ export const theme = {
     headingPrimary: "#26CB4D",
     activeToggleItem: "#DAF9D9",
     toggleText: "#00B475",
+    errorText: "#FF004D",
+    errorBg: "rgba(255, 0, 77, 0.1)",
   },
 
   fontSizes: {
@@ -13,6 +15,8 @@ export const theme = {
     heading4: "20px",
     heading5: "16px",
     heading6: "14px",
-    toggleOption: "18px"
+    toggleOption: "18px",
+    paragraphLoading: "17px",
+    paragraphError: "16px",
   },
 };
