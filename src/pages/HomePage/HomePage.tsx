@@ -13,9 +13,14 @@ import { IFacility, ViewsType } from "./types";
 import { ErrorMessagesType } from "../../components/atoms/ErrorMessage/types";
 
 import dictionary from "../../dictionaries/pages.json";
+import MapView from "../../components/views/MapView";
+
+const selectedViewFromSessionStorage = sessionStorage.getItem("selectedView");
 
 const HomePage = () => {
-  const [selectedView, setSelectedView] = useState(ViewsType.LIST_VIEW);
+  const [selectedView, setSelectedView] = useState(
+    selectedViewFromSessionStorage || ViewsType.LIST_VIEW
+  );
   const [facilities, setFacilities] = useState<IFacility[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -39,8 +44,14 @@ const HomePage = () => {
       <Heading level={1} title={homeDictionary.title} />
       <ToggleView
         selectedView={selectedView}
-        setListView={() => setSelectedView(ViewsType.LIST_VIEW)}
-        setMapView={() => setSelectedView(ViewsType.MAP_VIEW)}
+        setListView={() => {
+          setSelectedView(ViewsType.LIST_VIEW);
+          sessionStorage.setItem("selectedView", ViewsType.LIST_VIEW);
+        }}
+        setMapView={() => {
+          setSelectedView(ViewsType.MAP_VIEW);
+          sessionStorage.setItem("selectedView", ViewsType.MAP_VIEW);
+        }}
       />
 
       {isLoading && !isError && <Loading />}
@@ -52,6 +63,12 @@ const HomePage = () => {
         facilities.length > 0 &&
         selectedView === ViewsType.LIST_VIEW && (
           <ListView facilities={facilities} />
+        )}
+      {!isLoading &&
+        !isError &&
+        facilities.length > 0 &&
+        selectedView === ViewsType.MAP_VIEW && (
+          <MapView facilities={facilities} />
         )}
     </StyledMain>
   );
