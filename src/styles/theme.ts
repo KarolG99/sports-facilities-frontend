@@ -6,6 +6,9 @@ export const theme = {
     toggleText: "#00B475",
     errorText: "#FF004D",
     errorBg: "rgba(255, 0, 77, 0.1)",
+    singleFacilityBg: "#FFFFFF",
+    occupiedFacility: "#FF004D",
+    unoccupiedFacility: "#26CB4D",
   },
 
   fontSizes: {

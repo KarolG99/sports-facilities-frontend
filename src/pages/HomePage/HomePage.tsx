@@ -3,20 +3,20 @@ import { styled } from "styled-components";
 
 import Heading from "../../components/atoms/Heading";
 import ToggleView from "../../components/atoms/ToggleView";
+import ListView from "../../components/views/ListView";
+import ErrorMessage from "../../components/atoms/ErrorMessage/ErrorMessage";
+import Loading from "../../components/molecules/Loading";
 
 import { getAllFacilities } from "../../serviceCalls/getAllFacilities";
 
-import { ViewsType } from "./types";
+import { IFacility, ViewsType } from "./types";
 import { ErrorMessagesType } from "../../components/atoms/ErrorMessage/types";
-
-import Loading from "../../components/molecules/Loading";
-import ErrorMessage from "../../components/atoms/ErrorMessage/ErrorMessage";
 
 import dictionary from "../../dictionaries/pages.json";
 
 const HomePage = () => {
   const [selectedView, setSelectedView] = useState(ViewsType.LIST_VIEW);
-  const [facilities, setFacilities] = useState(null);
+  const [facilities, setFacilities] = useState<IFacility[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const homeDictionary = dictionary.home;
@@ -47,6 +47,12 @@ const HomePage = () => {
       {!isLoading && isError && (
         <ErrorMessage errorType={ErrorMessagesType.FETCH_ERROR_MESSAGE} />
       )}
+      {!isLoading &&
+        !isError &&
+        facilities.length > 0 &&
+        selectedView === ViewsType.LIST_VIEW && (
+          <ListView facilities={facilities} />
+        )}
     </StyledMain>
   );
 };

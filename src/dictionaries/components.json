@@ -5,5 +5,18 @@
   "errorMessages": {
     "default": "Coś poszło nie tak, spróbuj odświeżyć stronę.",
     "fetching": "Coś poszło nie tak, spróbuj odświeżyć stronę."
+  },
+  "singleFacility": {
+    "city": "Miejscowość:",
+    "ZIPCode": "Kod pocztowy:",
+    "address": "Adres:",
+    "purpose": "Przeznaczenie:",
+    "description": "Opis:",
+    "occupied": "Zajęte",
+    "unoccupied": "Wolne",
+    "occupiedWithTime": "Zajęte do:",
+    "googlePlusCode": "Google Plus Code:",
+    "coordinates": "Współrzędne:",
+    "active": "Aktywne:"
   }
 }
