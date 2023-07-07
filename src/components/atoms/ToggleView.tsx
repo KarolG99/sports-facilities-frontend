@@ -1,10 +1,11 @@
 import { styled } from "styled-components";
 
-import dictionary from "../../dictionaries/pages.json";
-
 import { ReactComponent as ListIcon } from "../../assets/icons/list.svg";
 import { ReactComponent as MapIcon } from "../../assets/icons/map.svg";
-import { ViewsType } from "../../pages/HomePage";
+
+import { ViewsType } from "../../pages/HomePage/types";
+
+import dictionary from "../../dictionaries/pages.json";
 
 interface ToggleViewProps {
   selectedView: string;
@@ -12,16 +13,26 @@ interface ToggleViewProps {
   setMapView: () => void;
 }
 
-const ToggleView = ({ selectedView, setListView, setMapView }: ToggleViewProps) => {
+const ToggleView = ({
+  selectedView,
+  setListView,
+  setMapView,
+}: ToggleViewProps) => {
   const toggleViewDictionary = dictionary.home.toggleView;
 
   return (
     <StyledToggleWrapper>
-      <StyledButton active={selectedView === ViewsType.LIST_VIEW} onClick={setListView}>
+      <StyledButton
+        active={(selectedView === ViewsType.LIST_VIEW).toString()}
+        onClick={setListView}
+      >
         <ListIcon />
         <span>{toggleViewDictionary.option1.name}</span>
       </StyledButton>
-      <StyledButton active={selectedView === ViewsType.MAP_VIEW} onClick={setMapView}>
+      <StyledButton
+        active={(selectedView === ViewsType.MAP_VIEW).toString()}
+        onClick={setMapView}
+      >
         <MapIcon />
         <span>{toggleViewDictionary.option2.name}</span>
       </StyledButton>
@@ -38,12 +49,12 @@ const StyledToggleWrapper = styled.div`
   margin: 20px auto;
 `;
 
-const StyledButton = styled.button<{ active: boolean }>`
+const StyledButton = styled.button<{ active: string }>`
   background-color: ${({ active, theme }) =>
-    active ? theme.colors.activeToggleItem : "transparent"};
+    active === "true" ? theme.colors.activeToggleItem : "transparent"};
   border: 1px solid ${({ theme }) => theme.colors.toggleText};
   font-size: ${({ theme }) => theme.fontSizes.toggleOption};
-  font-weight: ${({ active }) => (active ? 600 : 400)};
+  font-weight: ${({ active }) => (active === "true" ? 600 : 400)};
   color: ${({ theme }) => theme.colors.toggleText};
   display: flex;
   justify-content: center;
@@ -58,7 +69,7 @@ const StyledButton = styled.button<{ active: boolean }>`
   svg {
     width: 25px;
     display: block;
-    stroke-width: ${({ active }) => (active ? 2 : 1)};
+    stroke-width: ${({ active }) => (active === "true" ? 2 : 1)};
   }
 
   &:first-child {
