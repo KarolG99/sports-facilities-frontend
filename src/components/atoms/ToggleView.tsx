@@ -4,19 +4,26 @@ import dictionary from "../../dictionaries/pages.json";
 
 import { ReactComponent as ListIcon } from "../../assets/icons/list.svg";
 import { ReactComponent as MapIcon } from "../../assets/icons/map.svg";
+import { ViewsType } from "../../pages/HomePage";
 
-const ToggleButton = () => {
-  const toggleButtonDictionary = dictionary.home.toggleButton;
+interface ToggleViewProps {
+  selectedView: string;
+  setListView: () => void;
+  setMapView: () => void;
+}
+
+const ToggleView = ({ selectedView, setListView, setMapView }: ToggleViewProps) => {
+  const toggleViewDictionary = dictionary.home.toggleView;
 
   return (
     <StyledToggleWrapper>
-      <StyledButton>
+      <StyledButton active={selectedView === ViewsType.LIST_VIEW} onClick={setListView}>
         <ListIcon />
-        <span>{toggleButtonDictionary.option1.name}</span>
+        <span>{toggleViewDictionary.option1.name}</span>
       </StyledButton>
-      <StyledButton>
+      <StyledButton active={selectedView === ViewsType.MAP_VIEW} onClick={setMapView}>
         <MapIcon />
-        <span>{toggleButtonDictionary.option2.name}</span>
+        <span>{toggleViewDictionary.option2.name}</span>
       </StyledButton>
     </StyledToggleWrapper>
   );
@@ -31,10 +38,12 @@ const StyledToggleWrapper = styled.div`
   margin: 20px auto;
 `;
 
-const StyledButton = styled.button`
-  background-color: transparent;
+const StyledButton = styled.button<{ active: boolean }>`
+  background-color: ${({ active, theme }) =>
+    active ? theme.colors.activeToggleItem : "transparent"};
   border: 1px solid ${({ theme }) => theme.colors.toggleText};
   font-size: ${({ theme }) => theme.fontSizes.toggleOption};
+  font-weight: ${({ active }) => (active ? 600 : 400)};
   color: ${({ theme }) => theme.colors.toggleText};
   display: flex;
   justify-content: center;
@@ -49,6 +58,7 @@ const StyledButton = styled.button`
   svg {
     width: 25px;
     display: block;
+    stroke-width: ${({ active }) => (active ? 2 : 1)};
   }
 
   &:first-child {
@@ -57,13 +67,6 @@ const StyledButton = styled.button`
   &:last-child {
     border-radius: 0 10px 10px 0;
   }
-  &:focus {
-    background-color: ${({ theme }) => theme.colors.activeToggleItem};
-    font-weight: 600;
-    svg {
-      stroke-width: 2px;
-    }
-  }
 `;
 
-export default ToggleButton;
+export default ToggleView;

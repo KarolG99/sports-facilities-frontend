@@ -1,7 +1,7 @@
 {
   "home": {
     "title": "Wszystkie obiekty",
-    "toggleButton": {
+    "toggleView": {
       "option1": {
         "name": "Lista"
       },
