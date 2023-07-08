@@ -4,7 +4,8 @@
   },
   "errorMessages": {
     "default": "Coś poszło nie tak, spróbuj odświeżyć stronę.",
-    "fetching": "Coś poszło nie tak, spróbuj odświeżyć stronę."
+    "fetching": "Coś poszło nie tak, spróbuj odświeżyć stronę.",
+    "booking": "Coś poszło nie tak, odśwież stronę i spróbuj ponownie."
   },
   "singleFacility": {
     "city": "Miejscowość:",
@@ -18,5 +19,13 @@
     "googlePlusCode": "Google Plus Code:",
     "coordinates": "Współrzędne:",
     "active": "Aktywne:"
+  },
+  "QuickBookingForm": {
+    "title": "Szybka rezerwacja",
+    "button": {
+      "loadingText": "Rezerwuje...",
+      "bookedText": "Zarezerwowane!",
+      "bookingText": "Zajmuję"
+    }
   }
 }

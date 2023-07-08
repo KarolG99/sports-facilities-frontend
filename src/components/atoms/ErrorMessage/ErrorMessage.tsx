@@ -14,6 +14,12 @@ const ErrorMessage = ({ errorType }: ErrorMessagesProps) => {
           {errorMessagesDictionary.fetching}
         </StyledErrorMessage>
       );
+    case ErrorMessagesType.BOOK_ERROR_MESSAGE:
+      return (
+        <StyledErrorMessage>
+          {errorMessagesDictionary.booking}
+        </StyledErrorMessage>
+      );
     default:
       return (
         <StyledErrorMessage>

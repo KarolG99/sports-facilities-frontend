@@ -24,8 +24,8 @@ const FacilityStatus = ({
   };
   return (
     <StyledFacilityStatus
-      isOccupied={isOccupied.toString()}
-      withoutCircle={withoutCircle ? "true" : "false"}
+      isoccupied={isOccupied.toString()}
+      withoutcircle={withoutCircle ? "true" : "false"}
     >
       {getStatusContent()}
     </StyledFacilityStatus>
@@ -33,29 +33,29 @@ const FacilityStatus = ({
 };
 
 const StyledFacilityStatus = styled.p<{
-  isOccupied: string;
-  withoutCircle: string;
+  isoccupied: string;
+  withoutcircle: string;
 }>`
   font-weight: 600;
-  color: ${({ isOccupied, theme }) =>
-    isOccupied === "true"
+  color: ${({ isoccupied, theme }) =>
+    isoccupied === "true"
       ? theme.colors.occupiedFacility
       : theme.colors.unoccupiedFacility};
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: ${({ withoutCircle }) =>
-    withoutCircle === "true" ? "0px" : "20px"};
+  margin-left: ${({ withoutcircle }) =>
+    withoutcircle === "true" ? "0px" : "20px"};
   &::before {
-    display: ${({ withoutCircle }) =>
-      withoutCircle === "true" ? "none" : "block"};
+    display: ${({ withoutcircle }) =>
+      withoutcircle === "true" ? "none" : "block"};
     content: "";
     position: absolute;
     left: -20px;
     width: 16px;
     height: 16px;
-    background-color: ${({ isOccupied, theme }) =>
-      isOccupied === "true"
+    background-color: ${({ isoccupied, theme }) =>
+      isoccupied === "true"
         ? theme.colors.occupiedFacility
         : theme.colors.unoccupiedFacility};
     border-radius: 50%;

@@ -1,37 +1,55 @@
 @font-face {
-  font-family: "Chillax";
-  src: url("./fonts/Chillax-Bold.otf") format("opentype");
-  font-weight: 700;
+  font-family: "BeVietnamPro";
+  src: url("./fonts/BeVietnamPro-Thin.otf") format("opentype");
+  font-weight: 100;
   font-style: normal;
 }
 @font-face {
-  font-family: "Chillax";
-  src: url("./fonts/Chillax-Extralight.otf") format("opentype");
+  font-family: "BeVietnamPro";
+  src: url("./fonts/BeVietnamPro-ExtraLight.otf") format("opentype");
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
-  font-family: "Chillax";
-  src: url("./fonts/Chillax-Light.otf") format("opentype");
+  font-family: "BeVietnamPro";
+  src: url("./fonts/BeVietnamPro-Light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: "Chillax";
-  src: url("./fonts/Chillax-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Chillax";
-  src: url("./fonts/Chillax-Regular.otf") format("opentype");
+  font-family: "BeVietnamPro";
+  src: url("./fonts/BeVietnamPro-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Chillax";
-  src: url("./fonts/Chillax-Semibold.otf") format("opentype");
+  font-family: "BeVietnamPro";
+  src: url("./fonts/BeVietnamPro-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  src: url("./fonts/BeVietnamPro-SemiBold.otf") format("opentype");
   font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  src: url("./fonts/BeVietnamPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  src: url("./fonts/BeVietnamPro-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  src: url("./fonts/BeVietnamPro-Black.otf") format("opentype");
+  font-weight: 900;
   font-style: normal;
 }
 
