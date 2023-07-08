@@ -11,13 +11,14 @@ import { bookFacility } from "../../serviceCalls/bookFacility";
 
 import { availableBookingTimes } from "../../data/quickBookingFormData";
 import dictionary from "../../dictionaries/components.json";
-
+import { useNavigate } from "react-router-dom";
 
 interface QuickBookingFormProps {
   facilityId: string | undefined;
 }
 
 const QuickBookingForm = ({ facilityId }: QuickBookingFormProps) => {
+  const navigate = useNavigate();
   const [selectedValue, setSelectedValue] = useState<{
     value: number;
     text: string;
@@ -45,6 +46,7 @@ const QuickBookingForm = ({ facilityId }: QuickBookingFormProps) => {
           setIsLoading(false);
           setIsBooked(true);
           setSelectedValue(null);
+          navigate(0);
         })
         .catch((error) => {
           setIsLoading(false);
