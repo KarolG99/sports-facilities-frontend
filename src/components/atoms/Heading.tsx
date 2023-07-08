@@ -8,6 +8,7 @@ interface HeadingProps extends React.HTMLProps<HTMLHeadingElement> {
 
 const HeadingStyles = styled.h1`
   color: ${({ theme }) => theme.colors.headingPrimary};
+  font-weight: 900;
 `;
 
 const Heading1 = styled(HeadingStyles)`
@@ -24,14 +25,17 @@ const Heading3 = styled(HeadingStyles)`
 
 const Heading4 = styled(HeadingStyles)`
   font-size: ${({ theme }) => theme.fontSizes.heading4};
+  font-weight: 800;
 `;
 
 const Heading5 = styled(HeadingStyles)`
   font-size: ${({ theme }) => theme.fontSizes.heading5};
+  font-weight: 800;
 `;
 
 const Heading6 = styled(HeadingStyles)`
   font-size: ${({ theme }) => theme.fontSizes.heading6};
+  font-weight: 800;
 `;
 
 const Heading = ({ level = 1, title, ...rest }: HeadingProps) => {

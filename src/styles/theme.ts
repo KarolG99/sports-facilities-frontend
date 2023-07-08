@@ -9,6 +9,12 @@ export const theme = {
     singleFacilityBg: "#FFFFFF",
     occupiedFacility: "#FF004D",
     unoccupiedFacility: "#26CB4D",
+    scanQRCodeBg: "#0082FF",
+    timeSelectBg: "#DAF9D9",
+    timeSelectText: "#00B475",
+    quickBookingFormBg: "#FFFFFF",
+    quickBookingFormButtonBg: "#26CB4D",
+    quickBookingFormButtonText: "#FFFFFF",
   },
 
   fontSizes: {
@@ -21,5 +27,6 @@ export const theme = {
     toggleOption: "18px",
     paragraphLoading: "17px",
     paragraphError: "16px",
+    button: "16px"
   },
 };

@@ -9,12 +9,12 @@ html {
     box-sizing: inherit;
 }
 body {
-    font-family: 'Chillax', sans-serif;
+    font-family: 'BeVietnamPro', sans-serif;
     overflow-x: hidden;
     max-width: 100vw;
     background-color: ${({ theme }) => theme.colors.bgPrimary};
 }
 a, button, textarea {
-    font-family: 'Chillax', sans-serif;
+    font-family: 'BeVietnamPro', sans-serif;
 }
 `;

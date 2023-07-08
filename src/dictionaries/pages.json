@@ -9,5 +9,8 @@
         "name": "Mapa"
       }
     }
+  },
+  "bookFacility": {
+    "title": "Zarezerwuj"
   }
 }
