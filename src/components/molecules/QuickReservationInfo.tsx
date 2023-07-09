@@ -86,7 +86,7 @@ const StyledCloseButton = styled.button`
   cursor: pointer;
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: 0px;
   color: ${({ theme }) => theme.colors.basicColor};
 
   svg {
