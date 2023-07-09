@@ -86,7 +86,7 @@ const MapView = ({ facilities }: MapViewProps) => {
 
 const StyledMapContainer = styled(MapContainer)`
   width: 95%;
-  height: calc(90vh - 180px);
+  height: calc(90vh - 185px);
   margin: auto;
   max-width: 800px;
   max-height: 670px;

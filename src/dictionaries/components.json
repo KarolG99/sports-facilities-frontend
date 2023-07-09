@@ -27,5 +27,12 @@
       "bookedText": "Zarezerwowane!",
       "bookingText": "Zajmuję"
     }
+  },
+  "QuickReservationInfo": {
+    "buttonText": "Szybka rezerwacja",
+    "info": {
+      "title": "Szybka rezerwacja",
+      "text": "Zeskanuj kod QR, który znajduje się przy wejściu na obiekt aparatem lub aplikacją do skanowania kodów QR i wybierz czas na jaki zajmujesz obiekt."
+    }
   }
 }

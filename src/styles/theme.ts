@@ -15,6 +15,10 @@ export const theme = {
     quickBookingFormBg: "#FFFFFF",
     quickBookingFormButtonBg: "#26CB4D",
     quickBookingFormButtonText: "#FFFFFF",
+    quickReservatioinInfoText: "#0063ce",
+    quickReservatioinInfoPopup: "white",
+    shadowElement: "#5f605f62",
+    basicColor: "#000000",
   },
 
   fontSizes: {
@@ -27,6 +31,7 @@ export const theme = {
     toggleOption: "18px",
     paragraphLoading: "17px",
     paragraphError: "16px",
-    button: "16px"
+    button: "16px",
+    infoButton: "14px",
   },
 };
