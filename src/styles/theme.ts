@@ -19,6 +19,8 @@ export const theme = {
     quickReservatioinInfoPopup: "white",
     shadowElement: "#5f605f62",
     basicColor: "#000000",
+    footerText: "#00000033",
+    footerTextHover: "#F9CD11",
   },
 
   fontSizes: {
@@ -33,5 +35,6 @@ export const theme = {
     paragraphError: "16px",
     button: "16px",
     infoButton: "14px",
+    footerAuthor: "12px",
   },
 };

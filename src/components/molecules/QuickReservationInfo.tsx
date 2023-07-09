@@ -88,9 +88,14 @@ const StyledCloseButton = styled.button`
   top: 5px;
   right: 5px;
   color: ${({ theme }) => theme.colors.basicColor};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
 
   svg {
     width: 20px;
+    height: 20px;
   }
 `;
 

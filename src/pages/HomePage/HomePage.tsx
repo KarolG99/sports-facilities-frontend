@@ -6,6 +6,7 @@ import ErrorMessage from "../../components/atoms/ErrorMessage/ErrorMessage";
 import Loading from "../../components/molecules/Loading";
 import MobileView from "../../components/views/MobileView";
 import DesktopView from "../../components/views/DesktopView";
+import Footer from "../../components/organisms/Footer";
 
 import { getAllFacilities } from "../../serviceCalls/getAllFacilities";
 
@@ -13,7 +14,6 @@ import { IFacility } from "./types";
 import { ErrorMessagesType } from "../../components/atoms/ErrorMessage/types";
 
 import dictionary from "../../dictionaries/pages.json";
-
 
 const HomePage = () => {
   const [facilities, setFacilities] = useState<IFacility[]>([]);
@@ -48,6 +48,8 @@ const HomePage = () => {
           <DesktopView facilities={facilities} />
         </>
       )}
+
+      <Footer />
     </StyledMain>
   );
 };
