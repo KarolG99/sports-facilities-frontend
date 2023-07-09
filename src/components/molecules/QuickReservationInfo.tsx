@@ -86,11 +86,16 @@ const StyledCloseButton = styled.button`
   cursor: pointer;
   position: absolute;
   top: 5px;
-  right: 0px;
+  right: 5px;
   color: ${({ theme }) => theme.colors.basicColor};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
 
   svg {
     width: 20px;
+    height: 20px;
   }
 `;
 
