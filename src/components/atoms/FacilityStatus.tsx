@@ -17,7 +17,7 @@ const FacilityStatus = ({
   const getStatusContent = () => {
     if (isOccupied) {
       return occupiedTime
-        ? `${facilityDictionary.occupiedWithTime} ${occupiedTime}`
+        ? `${facilityDictionary.occupiedWithTime} ${new Date(occupiedTime).toLocaleString()}`
         : facilityDictionary.occupied;
     }
     return facilityDictionary.unoccupied;
