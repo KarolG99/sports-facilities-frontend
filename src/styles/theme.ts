@@ -21,7 +21,9 @@ export const theme = {
     basicColor: "#000000",
     footerText: "#00000033",
     footerTextHover: "#F9CD11",
-    smallText: "#696969"
+    smallText: "#696969",
+    okBg: "rgba(38, 203, 77, 0.1)",
+    okText: "rgba(38, 203, 77, 1)"
   },
 
   fontSizes: {

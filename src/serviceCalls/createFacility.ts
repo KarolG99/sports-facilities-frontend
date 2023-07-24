@@ -27,7 +27,7 @@ export const createFacility = async (values: FacilityInterface) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ values }),
+    body: JSON.stringify({ ...values }),
   });
   return response.json();
 };

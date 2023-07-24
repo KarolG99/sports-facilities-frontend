@@ -6,6 +6,8 @@ import FormField from "../../components/molecules/FormField";
 import FormMap from "../../components/organisms/FormMap";
 import { createFacility } from "../../serviceCalls/createFacility";
 import { useState } from "react";
+import ErrorMessage from "../../components/atoms/ErrorMessage/ErrorMessage";
+import { ErrorMessagesType } from "../../components/atoms/ErrorMessage/types";
 
 const CreateFacilityForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -59,7 +61,7 @@ const CreateFacilityForm = () => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, { resetForm }) => {
         setIsLoading(true);
         const copiedObject = (({ latitude, longitude, ...rest }) => rest)(
           values
@@ -76,9 +78,14 @@ const CreateFacilityForm = () => {
         };
         createFacility(preparedValues)
           .then((res) => {
-            console.log(res);
-            setIsLoading(false);
-            setIsAdded(true);
+            if (!res?.error) {
+              setIsLoading(false);
+              setIsAdded(true);
+              resetForm({ values: initialValues });
+            } else {
+              setIsLoading(false);
+              setIsError(true);
+            }
           })
           .catch((err) => {
             setIsLoading(false);
@@ -157,7 +164,15 @@ const CreateFacilityForm = () => {
           <small>Przeciągnij marker na mapie, żeby zaznaczyć</small>
           <FormMap values={values} handleChange={handleChange} />
 
-          <StyledSubmitButton type="submit">Dodaj</StyledSubmitButton>
+          {isError && !isLoading ? (
+            <ErrorMessage errorType={ErrorMessagesType.FETCH_ERROR_MESSAGE} />
+          ) : null}
+          {isAdded && !isLoading ? (
+            <StyledOkMessage>Obiekt dodany</StyledOkMessage>
+          ) : null}
+          <StyledSubmitButton disabled={isLoading} type="submit">
+            Dodaj
+          </StyledSubmitButton>
         </StyledForm>
       )}
     </Formik>
@@ -181,6 +196,24 @@ const StyledSubmitButton = styled.button`
   font-size: ${({ theme }) => theme.fontSizes.button};
   font-weight: 600;
   cursor: pointer;
+  margin-top: 10px;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+`;
+
+const StyledOkMessage = styled.p`
+  color: ${({ theme }) => theme.colors.okText};
+  background-color: ${({ theme }) => theme.colors.okBg};
+  font-weight: 500;
+  font-size: ${({ theme }) => theme.fontSizes.paragraphError};
+  width: fit-content;
+  max-width: 95%;
+  text-align: center;
+  margin: 40px auto auto auto;
+  padding: 5px 8px;
+  border-radius: 8px;
 `;
 
 export default CreateFacilityForm;
