@@ -21,6 +21,7 @@ export const theme = {
     basicColor: "#000000",
     footerText: "#00000033",
     footerTextHover: "#F9CD11",
+    smallText: "#696969"
   },
 
   fontSizes: {
@@ -36,5 +37,8 @@ export const theme = {
     button: "16px",
     infoButton: "14px",
     footerAuthor: "12px",
+    label: "18px",
+    input: "16px",
+    small: "12px"
   },
 };
