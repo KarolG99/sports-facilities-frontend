@@ -12,5 +12,8 @@
   },
   "bookFacility": {
     "title": "Zarezerwuj"
+  },
+  "createFacility": {
+    "title": "Dodaj obiekt"
   }
 }

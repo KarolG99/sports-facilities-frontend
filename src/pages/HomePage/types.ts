@@ -8,6 +8,7 @@ export interface IFacility {
   ZIPCode: string;
   address: string;
   purpose: string;
+  email: string;
   password?: string;
   description: string;
   isOccupied: boolean;
