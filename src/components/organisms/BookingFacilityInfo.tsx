@@ -41,10 +41,6 @@ const BookingFacilityInfo = ({ facility }: BookingFacilityInfoProps) => {
         fieldName={facilityDictionary.address}
         fieldText={address}
       />
-      <SingleFacilityItem
-        fieldName={facilityDictionary.purpose}
-        fieldText={purpose}
-      />
       {description && (
         <SingleFacilityItem
           fieldName={facilityDictionary.description}
