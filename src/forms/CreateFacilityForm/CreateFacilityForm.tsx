@@ -8,6 +8,7 @@ import { createFacility } from "../../serviceCalls/createFacility";
 import { useState } from "react";
 import ErrorMessage from "../../components/atoms/ErrorMessage/ErrorMessage";
 import { ErrorMessagesType } from "../../components/atoms/ErrorMessage/types";
+import { FacilityTypes } from "../../components/atoms/FacilityType";
 
 const CreateFacilityForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -51,10 +52,10 @@ const CreateFacilityForm = () => {
 
   const purposeOptions = [
     { value: "", label: "Wybierz" },
-    { value: "tennis", label: "Tenis" },
-    { value: "soccer", label: "Piłka nożna" },
-    { value: "basketball", label: "Koszykówka" },
-    { value: "volleyball", label: "Siatkówka" },
+    { value: FacilityTypes.TENNIS, label: "Tenis" },
+    { value: FacilityTypes.SOCCER, label: "Piłka nożna" },
+    { value: FacilityTypes.BASKETBALL, label: "Koszykówka" },
+    { value: FacilityTypes.VOLLEYBALL, label: "Siatkówka" },
   ];
 
   return (

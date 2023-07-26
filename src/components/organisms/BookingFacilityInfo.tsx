@@ -4,6 +4,7 @@ import dictionary from "../../dictionaries/components.json";
 import SingleFacilityItem from "../atoms/SingleFacilityItem";
 import FacilityStatus from "../atoms/FacilityStatus";
 import { styled } from "styled-components";
+import FacilityType from "../atoms/FacilityType";
 
 interface BookingFacilityInfoProps {
   facility: IFacility;
@@ -24,6 +25,10 @@ const BookingFacilityInfo = ({ facility }: BookingFacilityInfoProps) => {
   return (
     <StyledBookingFacilityInfo>
       <FacilityStatus isOccupied={isOccupied} occupiedTime={occupiedTime} />
+      <SingleFacilityItem
+        fieldName={""}
+        fieldText={<FacilityType type={purpose} />}
+      />
       <SingleFacilityItem
         fieldName={facilityDictionary.city}
         fieldText={city}

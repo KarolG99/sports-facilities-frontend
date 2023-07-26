@@ -23,7 +23,9 @@ export const theme = {
     footerTextHover: "#F9CD11",
     smallText: "#696969",
     okBg: "rgba(38, 203, 77, 0.1)",
-    okText: "rgba(38, 203, 77, 1)"
+    okText: "rgba(38, 203, 77, 1)",
+    facilityTypeText: "#0063ce",
+    facilityTypeBg: "rgba(0, 99, 206, 0.1)"
   },
 
   fontSizes: {

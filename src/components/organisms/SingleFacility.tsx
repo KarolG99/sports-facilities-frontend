@@ -6,6 +6,7 @@ import FacilityStatus from "../atoms/FacilityStatus";
 import { IFacility } from "../../pages/HomePage/types";
 
 import dictionary from "../../dictionaries/components.json";
+import FacilityType from "../atoms/FacilityType";
 
 interface SingleFacilityProps {
   facility: IFacility;
@@ -28,6 +29,10 @@ const SingleFacility = ({ facility }: SingleFacilityProps) => {
     <StyledSingleFacility>
       <FacilityStatus isOccupied={isOccupied} occupiedTime={occupiedTime} />
       <SingleFacilityItem
+        fieldName={""}
+        fieldText={<FacilityType type={purpose} />}
+      />
+      <SingleFacilityItem
         fieldName={facilityDictionary.city}
         fieldText={city}
       />
@@ -38,10 +43,6 @@ const SingleFacility = ({ facility }: SingleFacilityProps) => {
       <SingleFacilityItem
         fieldName={facilityDictionary.address}
         fieldText={address}
-      />
-      <SingleFacilityItem
-        fieldName={facilityDictionary.purpose}
-        fieldText={purpose}
       />
       {description && (
         <SingleFacilityItem
