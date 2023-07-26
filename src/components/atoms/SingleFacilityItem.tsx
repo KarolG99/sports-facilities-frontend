@@ -1,8 +1,9 @@
+import { ReactNode } from "react";
 import { styled } from "styled-components";
 
 interface SingleFacilityItemProps {
   fieldName: string;
-  fieldText: string;
+  fieldText: string | ReactNode;
 }
 
 const SingleFacilityItem = ({

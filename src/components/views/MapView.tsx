@@ -13,6 +13,7 @@ import OccupiedMarkerIcon from "../../assets/icons/occupiedMarker.svg";
 import UnoccupiedMarkerIcon from "../../assets/icons/unoccupiedMarker.svg";
 
 import "leaflet/dist/leaflet.css";
+import FacilityType from "../atoms/FacilityType";
 
 interface MapViewProps {
   facilities: IFacility[];
@@ -61,6 +62,10 @@ const MapView = ({ facilities }: MapViewProps) => {
                 withoutCircle
               />
               <SingleFacilityItem
+                fieldName={""}
+                fieldText={<FacilityType type={facility.purpose} />}
+              />
+              <SingleFacilityItem
                 fieldName={facilityDictionary.city}
                 fieldText={facility.city}
               />
@@ -71,10 +76,6 @@ const MapView = ({ facilities }: MapViewProps) => {
               <SingleFacilityItem
                 fieldName={facilityDictionary.address}
                 fieldText={facility.address}
-              />
-              <SingleFacilityItem
-                fieldName={facilityDictionary.purpose}
-                fieldText={facility.purpose}
               />
             </Popup>
           </Marker>
